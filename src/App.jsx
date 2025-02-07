@@ -6,10 +6,6 @@ import Diary from './pages/Diary';
 import New from './pages/New';
 import Edit from './pages/Edit';
 import Notfound from './pages/Notfound';
-import Button from './components/Button';
-import Header from './components/Header';
-
-import { getEmotionImage } from "./util/get-emotion-image";
 
 // 1. "/" : 모든 일기를 조회하는 Home 페이지
 // 2. "/new" : 새로운 일기를 작성하는 New 페이지 
@@ -94,30 +90,6 @@ function App() {
 
   return  (
     <>
-    <button 
-      onClick={()=> {
-        onCreate(new Date().getTime(), 1, "Hello");
-      }} 
-    >
-      일기 추가 테스트
-    </button>
-    
-    <button
-      onClick={()=> {
-        onUpdate(1, new Date().getTime(), 3, "수정된 일기입니다."); 
-      }}
-    >
-      일기 수정 테스트
-    </button>
-
-    <button 
-      onClick={() => {
-        onDelete(1);
-      }}
-    >
-      일기 삭제 테스트 
-    </button>
-
     <DiaryStateContext.Provider value={data}>
       <DiaryDispatchContext.Provider 
         value={{
