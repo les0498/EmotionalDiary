@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Button from "../components/Button";
 import DiaryList from "../components/DiaryList";
 import usePageTitle from "../hooks/usePageTitle";
-
+import EmotionStats from "../components/EmotionStats";
 const getMonthlyData = (pivotDate, data) => {
   const beginTime = new Date(
     pivotDate.getFullYear(), 
@@ -56,7 +56,9 @@ const Home = () => {
         leftChild={<Button onClick={onDecreaseMonth} text={"<"}/>}
         rightChild={<Button onClick={onIncreaseMonth} text={">"}/>}
       />
-      <DiaryList data={monthlyData} />
+      <DiaryList data={monthlyData}  />
+      
+      <EmotionStats data={monthlyData} month={pivotDate.getMonth() + 1}/> 
     </div>
   )
 };
